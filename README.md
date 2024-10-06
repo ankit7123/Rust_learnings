@@ -89,10 +89,20 @@ Similar to references , using the reference : below is the example -
         
         }
 
+Can only have one mutable reference and n numbers of immutable references. 
 
 
-
-
+        fn main() {
+            
+            let mut s1:String = String::from("Hi There");
+            print!("{}",s1);
+            let s2:&String = &s1;
+            let s3:&mut String = &mut s1;//one time mutable 
+            let s4:&mut String = &mut s1;//this throws error saying can not borrow as mutable more then one
+            print!("{}",s2);
+            
+           
+        }
 
 
       
