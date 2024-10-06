@@ -80,14 +80,15 @@ The solution to above stat. is to clone, which is essentially copying the entire
 
 #Borrowing 
 Similar to references , using the reference : below is the example - 
-        fn main() {
-        
+       
+        fn main() {   
         let mut s1:String = String::from("Hi There");
         print!("{}",s1);
         let s2:&String = &s1;
         print!("{}",s2);
         
         }
+
 
 
 
