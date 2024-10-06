@@ -66,6 +66,32 @@ if variable type is pre-defined then it is stored in stack format for quicker ac
 #Ownership 
 Rust follows some rules on how to govern system memory, where compiler performs some checks. If any one of those rules are voilated the code won't compile. since compile check it doesn't slow down while running.
 
+For the same heap there can not be two pointers from stack. either one of them has to be invalid. the error code is "borrow of moved value: variable "
+The solution to above stat. is to clone, which is essentially copying the entire heap.
+
+        fn main() {
+            let s1:String = String::from("Hi There");
+            print!("{}",s1);
+            let s2:String = s1;
+            print!("{}",s2);
+            print!("{}",s1);//this throws error due to ownership moved from s1 to s2
+        }
+
+
+#Borrowing 
+Similar to references , using the reference : below is the example - 
+        fn main() {
+        
+        let mut s1:String = String::from("Hi There");
+        print!("{}",s1);
+        let s2:&String = &s1;
+        print!("{}",s2);
+        
+        }
+
+
+
+
 
 
       
