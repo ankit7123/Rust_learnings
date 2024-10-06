@@ -4,15 +4,15 @@ cargo build - rust-> binary at compile time
 
 By default everything is immutable in rust. Need to define if a variable is mutable & we need to change the values. for Ex - 
 
-fn main() {
-    println!("Hello, world!");
-    //arrays, maps ,strings 
-    //have to mention mutable to change values 
-    let mut var : i32 = 344555;
-    print!(" {}",var);
-    var = 4567;
-    print!(" changed values {}", var);
-}
+        fn main() {
+            println!("Hello, world!");
+            //arrays, maps ,strings 
+            //have to mention mutable to change values 
+            let mut var : i32 = 344555;
+            print!(" {}",var);
+            var = 4567;
+            print!(" changed values {}", var);
+        }
 Pros - Avoid memory issues , thread safe :) which leads to optmization from complier's prospective.
 Cons - values can be changed , if multiple threads are operating over it :(
 
