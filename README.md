@@ -63,4 +63,9 @@ if variable type is pre-defined then it is stored in stack format for quicker ac
       
       }
 
+#Ownership 
+Rust follows some rules on how to govern system memory, where compiler performs some checks. If any one of those rules are voilated the code won't compile. since compile check it doesn't slow down while running.
+
+
+
       
