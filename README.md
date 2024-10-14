@@ -103,6 +103,48 @@ Can only have one mutable reference and n numbers of immutable references.
             
            
         }
+For pattern matching Enums are easiest way to implement - 
 
-
+        // Define an enum for the different shapes
+        enum Shape {
+            Circle(f64),                // Circle with a radius
+            Square(f64),                // Square with a side length
+            Rectangle(f64, f64),        // Rectangle with width and height
+        }
+        
+        // Function to calculate the area of a shape
+                fn area(shape: &Shape) -> f64 {
+                    match shape {
+                        Shape::Circle(radius) => std::f64::consts::PI * radius * radius,
+                        Shape::Square(side) => side * side,
+                        Shape::Rectangle(width, height) => width * height,
+                    }
+                }
+                
+                // Function to display the shape's details
+                fn display_shape(shape: &Shape) {
+                    match shape {
+                        Shape::Circle(radius) => println!("Circle with radius: {}", radius),
+                        Shape::Square(side) => println!("Square with side: {}", side),
+                        Shape::Rectangle(width, height) => {
+                            println!("Rectangle with width: {} and height: {}", width, height)
+                        }
+                    }
+                }
+        
+        fn main() {
+            let circle = Shape::Circle(5.0);
+            let square = Shape::Square(4.0);
+            let rectangle = Shape::Rectangle(3.0, 6.0);
+        
+            // Calculate and display the areas
+            println!("Area of the circle: {}", area(&circle));
+            println!("Area of the square: {}", area(&square));
+            println!("Area of the rectangle: {}", area(&rectangle));
+        
+            // Display the shapes
+            display_shape(&circle);
+            display_shape(&square);
+            display_shape(&rectangle);
+        }
       
